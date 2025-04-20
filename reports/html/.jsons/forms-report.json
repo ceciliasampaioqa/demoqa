@@ -1,0 +1,144 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-04-20T18:26:05.240Z",
+    "end": "2025-04-20T18:26:28.554Z",
+    "duration": 23314,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cf302b83-7ed9-47eb-b4ee-ea5a1e4e9d19",
+      "title": "",
+      "fullFile": "cypress/e2e/forms.cy.js",
+      "file": "cypress/e2e/forms.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "63de2f81-f37d-4205-af92-760866854b97",
+          "title": "Forms",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "636becd1-b915-4f5d-bd12-950e5f716124",
+              "title": "Practice Form",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Submit Practice Form without fill required fields (Qase ID: 38)",
+                  "fullTitle": "Forms Practice Form Submit Practice Form without fill required fields (Qase ID: 38)",
+                  "timedOut": null,
+                  "duration": 7954,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const requiredFieldIds = ['firstName', 'lastName', 'userNumber'];\ncy.get('[id=\"submit\"]').click();\nrequiredFieldIds.forEach(field => {\n  cy.get(`[id=\"${field}\"]`).should('have.attr', 'required');\n});\ncy.get('[type=\"radio\"]').each(radio => {\n  cy.wrap(radio).should('have.attr', 'required');\n});",
+                  "err": {},
+                  "uuid": "4d02b836-1c2e-4820-9894-6badb1edf1b9",
+                  "parentUUID": "636becd1-b915-4f5d-bd12-950e5f716124",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Submit Practice Form with valid data (Qase ID: 35)",
+                  "fullTitle": "Forms Practice Form Submit Practice Form with valid data (Qase ID: 35)",
+                  "timedOut": null,
+                  "duration": 14510,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.gui_fillStudentRegistrationForm().then(data_user => {\n  cy.get('.modal-header').should('contain', 'Thanks for submitting the form');\n  cy.get('.modal-body').should('contain', data_user.firstName);\n  cy.get('.modal-body').should('contain', data_user.lastName);\n  cy.get('.modal-body').should('contain', data_user.email);\n  cy.get('.modal-body').should('contain', data_user.phone);\n  cy.get('.modal-body').should('contain', data_user.birthDate);\n  cy.get('.modal-body').should('contain', data_user.subjects);\n  cy.get('.modal-body').should('contain', data_user.hobbies);\n  cy.get('.modal-body').should('contain', data_user.picture);\n  cy.get('.modal-body').should('contain', data_user.address);\n  cy.get('.modal-body').should('contain', data_user.state);\n  cy.get('.modal-body').should('contain', data_user.city);\n});",
+                  "err": {},
+                  "uuid": "9534dca3-f7d3-4692-97df-221e62f0ef4e",
+                  "parentUUID": "636becd1-b915-4f5d-bd12-950e5f716124",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "4d02b836-1c2e-4820-9894-6badb1edf1b9",
+                "9534dca3-f7d3-4692-97df-221e62f0ef4e"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 22464,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports/html/.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportFilename": "[name]-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

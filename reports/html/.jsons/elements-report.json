@@ -1,0 +1,222 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-04-20T18:24:54.240Z",
+    "end": "2025-04-20T18:25:53.556Z",
+    "duration": 59316,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9738115d-527a-4276-b2db-8b0772ea5299",
+      "title": "",
+      "fullFile": "cypress/e2e/elements.cy.js",
+      "file": "cypress/e2e/elements.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c6b277f8-2948-4154-9cf1-d3a27727e1b1",
+          "title": "Elements",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "92e24721-8c85-4afd-a6e2-e0a216991fd5",
+              "title": "Text Box",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Submit Text Box form with valid data (Qase ID: 25)",
+                  "fullTitle": "Elements Text Box Submit Text Box form with valid data (Qase ID: 25)",
+                  "timedOut": null,
+                  "duration": 31663,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const data_user = {\n  firstName: 'Cecilia',\n  lastName: 'Sampaio',\n  email: 'ceciliasampaio.qa@gmail.com',\n  currentAddress: '123 Main Street',\n  permanentAddress: '456 Secondary Street'\n};\ncy.gui_fillFormElementsTextBox();\ncy.get('[id=\"output\"]').should('contain', `${data_user.firstName} ` + `${data_user.lastName}`).and('contain', `${data_user.email}`).and('contain', `${data_user.currentAddress}`).and('contain', `${data_user.permanentAddress}`);",
+                  "err": {},
+                  "uuid": "0d15620c-ebd5-4f99-b3f0-7b0d090bced7",
+                  "parentUUID": "92e24721-8c85-4afd-a6e2-e0a216991fd5",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "0d15620c-ebd5-4f99-b3f0-7b0d090bced7"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 31663,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "c6605515-86ac-46cf-9406-d81661b38e91",
+              "title": "Check Box",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Check multiple checkboxes in the \"Check Box\" page (Qase ID: 27)",
+                  "fullTitle": "Elements Check Box Check multiple checkboxes in the \"Check Box\" page (Qase ID: 27)",
+                  "timedOut": null,
+                  "duration": 10221,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const expectedWords = ['home', 'desktop', 'notes', 'commands', 'documents', 'workspace', 'react', 'angular', 'veu', 'office', 'public', 'private', 'classified', 'general', 'downloads', 'wordFile', 'excelFile'];\ncy.gui_checkingHomeCheckbox();\ncy.get('[id=\"result\"]').should('contain.text', 'You have selected :');\nexpectedWords.forEach(word => {\n  cy.get('[id=\"result\"]').should('contain.text', word);\n});",
+                  "err": {},
+                  "uuid": "d07e2916-95c6-4b5c-b46e-c94a294154d8",
+                  "parentUUID": "c6605515-86ac-46cf-9406-d81661b38e91",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "d07e2916-95c6-4b5c-b46e-c94a294154d8"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 10221,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "3ec4e443-943f-4884-834e-4de0f11c3572",
+              "title": "Radio Button",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Select \"Yes\" radio button (Qase ID: 37)",
+                  "fullTitle": "Elements Radio Button Select \"Yes\" radio button (Qase ID: 37)",
+                  "timedOut": null,
+                  "duration": 6856,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[id=\"yesRadio\"] + label').click();\ncy.contains('You have selected').should('be.visible');\ncy.get('p > span').should('contain', 'Yes').and('be.visible');",
+                  "err": {},
+                  "uuid": "008ee351-f9f9-44c7-945f-22d055024731",
+                  "parentUUID": "3ec4e443-943f-4884-834e-4de0f11c3572",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Select \"Impressive\" radio button (Qase ID: 26)",
+                  "fullTitle": "Elements Radio Button Select \"Impressive\" radio button (Qase ID: 26)",
+                  "timedOut": null,
+                  "duration": 8793,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[id=\"impressiveRadio\"] + label').click();\ncy.contains('You have selected').should('be.visible');\ncy.get('p > span').should('contain', 'Impressive').and('be.visible');",
+                  "err": {},
+                  "uuid": "c10d118c-cb6d-407b-a121-8cbebe87c9ce",
+                  "parentUUID": "3ec4e443-943f-4884-834e-4de0f11c3572",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "008ee351-f9f9-44c7-945f-22d055024731",
+                "c10d118c-cb6d-407b-a121-8cbebe87c9ce"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 15649,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports/html/.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportFilename": "[name]-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

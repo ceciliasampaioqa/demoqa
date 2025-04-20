@@ -1,0 +1,259 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-04-20T18:24:56.779Z",
+    "end": "2025-04-20T18:26:25.918Z",
+    "duration": 89139,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "da8399d3-4456-4888-9bae-7842870139f7",
+      "title": "",
+      "fullFile": "cypress/e2e/alerts_frame_windows.cy.js",
+      "file": "cypress/e2e/alerts_frame_windows.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "244b7b01-a09f-4754-a8f2-12aca2d69a85",
+          "title": "Alerts, Frames & Windows",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "cee4d32a-29b8-4d48-bb2a-dda2a2b06473",
+              "title": "Browser Windows",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Open new tab with content (Qase ID: 32)",
+                  "fullTitle": "Alerts, Frames & Windows Browser Windows Open new tab with content (Qase ID: 32)",
+                  "timedOut": null,
+                  "duration": 26477,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.gui_validateNewTabOrWindowContent('[id=\"tabButton\"]');\ncy.contains('This is a sample page').should('be.visible');",
+                  "err": {},
+                  "uuid": "a91e3157-6bf5-4400-b25a-042c964a6971",
+                  "parentUUID": "cee4d32a-29b8-4d48-bb2a-dda2a2b06473",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Open new window with content (Qase ID: 33)",
+                  "fullTitle": "Alerts, Frames & Windows Browser Windows Open new window with content (Qase ID: 33)",
+                  "timedOut": null,
+                  "duration": 23172,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.gui_validateNewTabOrWindowContent('[id=\"windowButton\"]');\ncy.contains('This is a sample page').should('be.visible');",
+                  "err": {},
+                  "uuid": "a978f013-f594-4877-a4f3-3d0c6366214c",
+                  "parentUUID": "cee4d32a-29b8-4d48-bb2a-dda2a2b06473",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "a91e3157-6bf5-4400-b25a-042c964a6971",
+                "a978f013-f594-4877-a4f3-3d0c6366214c"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 49649,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "56e9525d-7a28-4052-b1b6-633b729f5ff4",
+              "title": "Alerts",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Handle immediate alert on button click (Qase ID: 28)",
+                  "fullTitle": "Alerts, Frames & Windows Alerts Handle immediate alert on button click (Qase ID: 28)",
+                  "timedOut": null,
+                  "duration": 8635,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[id=\"alertButton\"]').click();\ncy.on('window:alert', text => {\n  expect(text).to.equal('You clicked a button');\n});",
+                  "err": {},
+                  "uuid": "fdfb7528-d52e-4187-a89c-e5eb51764d3a",
+                  "parentUUID": "56e9525d-7a28-4052-b1b6-633b729f5ff4",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Handle delayed alert after 5 seconds (Qase ID: 29)",
+                  "fullTitle": "Alerts, Frames & Windows Alerts Handle delayed alert after 5 seconds (Qase ID: 29)",
+                  "timedOut": null,
+                  "duration": 6627,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.clock();\ncy.get('[id=\"timerAlertButton\"]').click();\ncy.tick(5000);\ncy.on('window:alert', text => {\n  expect(text).to.equal('This alert appeared after 5 seconds');\n});",
+                  "err": {},
+                  "uuid": "2465d8c1-015a-4538-b76c-a7b8a58e9d5e",
+                  "parentUUID": "56e9525d-7a28-4052-b1b6-633b729f5ff4",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Handle \"OK\" on confirm box on button click (Qase ID: 30)",
+                  "fullTitle": "Alerts, Frames & Windows Alerts Handle \"OK\" on confirm box on button click (Qase ID: 30)",
+                  "timedOut": null,
+                  "duration": 6913,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.on('window:confirm', text => {\n  expect(text).to.equal('Do you confirm action?');\n  return true;\n});\ncy.get('[id=\"confirmButton\"]').click();\ncy.contains('You selected Ok').should('be.visible');",
+                  "err": {},
+                  "uuid": "417b2bd6-6dcd-4a1a-af26-d05a6afb348e",
+                  "parentUUID": "56e9525d-7a28-4052-b1b6-633b729f5ff4",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Handle \"Cancel\" on confirm box on button click (Qase ID: 39)",
+                  "fullTitle": "Alerts, Frames & Windows Alerts Handle \"Cancel\" on confirm box on button click (Qase ID: 39)",
+                  "timedOut": null,
+                  "duration": 7256,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.on('window:confirm', text => {\n  expect(text).to.equal('Do you confirm action?');\n  return false;\n});\ncy.get('[id=\"confirmButton\"]').click();\ncy.contains('You selected Cancel').should('be.visible');",
+                  "err": {},
+                  "uuid": "46bbd3c6-ccb0-4287-9228-003d5b5361e6",
+                  "parentUUID": "56e9525d-7a28-4052-b1b6-633b729f5ff4",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Handle prompt alert with text input (Qase ID: 31)",
+                  "fullTitle": "Alerts, Frames & Windows Alerts Handle prompt alert with text input (Qase ID: 31)",
+                  "timedOut": null,
+                  "duration": 7902,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const name = _faker.faker.person.firstName();\ncy.window().then(win => {\n  cy.stub(win, 'prompt').returns(name);\n});\ncy.get('[id=\"promtButton\"]').click();\ncy.contains(`You entered ${name}`).should('be.visible');",
+                  "err": {},
+                  "uuid": "d11eaf2d-4b31-4547-9741-10dad3a9e8c0",
+                  "parentUUID": "56e9525d-7a28-4052-b1b6-633b729f5ff4",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "fdfb7528-d52e-4187-a89c-e5eb51764d3a",
+                "2465d8c1-015a-4538-b76c-a7b8a58e9d5e",
+                "417b2bd6-6dcd-4a1a-af26-d05a6afb348e",
+                "46bbd3c6-ccb0-4287-9228-003d5b5361e6",
+                "d11eaf2d-4b31-4547-9741-10dad3a9e8c0"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 37333,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports/html/.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportFilename": "[name]-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

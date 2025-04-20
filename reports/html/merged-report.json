@@ -1,0 +1,741 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 17,
+    "passes": 17,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 17,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2025-04-20T18:24:54.240Z",
+    "end": "2025-04-20T18:26:37.584Z",
+    "duration": 103344
+  },
+  "results": [
+    {
+      "uuid": "da8399d3-4456-4888-9bae-7842870139f7",
+      "title": "",
+      "fullFile": "cypress/e2e/alerts_frame_windows.cy.js",
+      "file": "cypress/e2e/alerts_frame_windows.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "244b7b01-a09f-4754-a8f2-12aca2d69a85",
+          "title": "Alerts, Frames & Windows",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "cee4d32a-29b8-4d48-bb2a-dda2a2b06473",
+              "title": "Browser Windows",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Open new tab with content (Qase ID: 32)",
+                  "fullTitle": "Alerts, Frames & Windows Browser Windows Open new tab with content (Qase ID: 32)",
+                  "timedOut": null,
+                  "duration": 26477,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.gui_validateNewTabOrWindowContent('[id=\"tabButton\"]');\ncy.contains('This is a sample page').should('be.visible');",
+                  "err": {},
+                  "uuid": "a91e3157-6bf5-4400-b25a-042c964a6971",
+                  "parentUUID": "cee4d32a-29b8-4d48-bb2a-dda2a2b06473",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Open new window with content (Qase ID: 33)",
+                  "fullTitle": "Alerts, Frames & Windows Browser Windows Open new window with content (Qase ID: 33)",
+                  "timedOut": null,
+                  "duration": 23172,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.gui_validateNewTabOrWindowContent('[id=\"windowButton\"]');\ncy.contains('This is a sample page').should('be.visible');",
+                  "err": {},
+                  "uuid": "a978f013-f594-4877-a4f3-3d0c6366214c",
+                  "parentUUID": "cee4d32a-29b8-4d48-bb2a-dda2a2b06473",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "a91e3157-6bf5-4400-b25a-042c964a6971",
+                "a978f013-f594-4877-a4f3-3d0c6366214c"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 49649,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "56e9525d-7a28-4052-b1b6-633b729f5ff4",
+              "title": "Alerts",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Handle immediate alert on button click (Qase ID: 28)",
+                  "fullTitle": "Alerts, Frames & Windows Alerts Handle immediate alert on button click (Qase ID: 28)",
+                  "timedOut": null,
+                  "duration": 8635,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[id=\"alertButton\"]').click();\ncy.on('window:alert', text => {\n  expect(text).to.equal('You clicked a button');\n});",
+                  "err": {},
+                  "uuid": "fdfb7528-d52e-4187-a89c-e5eb51764d3a",
+                  "parentUUID": "56e9525d-7a28-4052-b1b6-633b729f5ff4",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Handle delayed alert after 5 seconds (Qase ID: 29)",
+                  "fullTitle": "Alerts, Frames & Windows Alerts Handle delayed alert after 5 seconds (Qase ID: 29)",
+                  "timedOut": null,
+                  "duration": 6627,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.clock();\ncy.get('[id=\"timerAlertButton\"]').click();\ncy.tick(5000);\ncy.on('window:alert', text => {\n  expect(text).to.equal('This alert appeared after 5 seconds');\n});",
+                  "err": {},
+                  "uuid": "2465d8c1-015a-4538-b76c-a7b8a58e9d5e",
+                  "parentUUID": "56e9525d-7a28-4052-b1b6-633b729f5ff4",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Handle \"OK\" on confirm box on button click (Qase ID: 30)",
+                  "fullTitle": "Alerts, Frames & Windows Alerts Handle \"OK\" on confirm box on button click (Qase ID: 30)",
+                  "timedOut": null,
+                  "duration": 6913,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.on('window:confirm', text => {\n  expect(text).to.equal('Do you confirm action?');\n  return true;\n});\ncy.get('[id=\"confirmButton\"]').click();\ncy.contains('You selected Ok').should('be.visible');",
+                  "err": {},
+                  "uuid": "417b2bd6-6dcd-4a1a-af26-d05a6afb348e",
+                  "parentUUID": "56e9525d-7a28-4052-b1b6-633b729f5ff4",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Handle \"Cancel\" on confirm box on button click (Qase ID: 39)",
+                  "fullTitle": "Alerts, Frames & Windows Alerts Handle \"Cancel\" on confirm box on button click (Qase ID: 39)",
+                  "timedOut": null,
+                  "duration": 7256,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.on('window:confirm', text => {\n  expect(text).to.equal('Do you confirm action?');\n  return false;\n});\ncy.get('[id=\"confirmButton\"]').click();\ncy.contains('You selected Cancel').should('be.visible');",
+                  "err": {},
+                  "uuid": "46bbd3c6-ccb0-4287-9228-003d5b5361e6",
+                  "parentUUID": "56e9525d-7a28-4052-b1b6-633b729f5ff4",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Handle prompt alert with text input (Qase ID: 31)",
+                  "fullTitle": "Alerts, Frames & Windows Alerts Handle prompt alert with text input (Qase ID: 31)",
+                  "timedOut": null,
+                  "duration": 7902,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const name = _faker.faker.person.firstName();\ncy.window().then(win => {\n  cy.stub(win, 'prompt').returns(name);\n});\ncy.get('[id=\"promtButton\"]').click();\ncy.contains(`You entered ${name}`).should('be.visible');",
+                  "err": {},
+                  "uuid": "d11eaf2d-4b31-4547-9741-10dad3a9e8c0",
+                  "parentUUID": "56e9525d-7a28-4052-b1b6-633b729f5ff4",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "fdfb7528-d52e-4187-a89c-e5eb51764d3a",
+                "2465d8c1-015a-4538-b76c-a7b8a58e9d5e",
+                "417b2bd6-6dcd-4a1a-af26-d05a6afb348e",
+                "46bbd3c6-ccb0-4287-9228-003d5b5361e6",
+                "d11eaf2d-4b31-4547-9741-10dad3a9e8c0"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 37333,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "8c4c670c-2322-4d57-8c4b-87ff76bb4799",
+      "title": "",
+      "fullFile": "cypress/e2e/book_store_application.cy.js",
+      "file": "cypress/e2e/book_store_application.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ec6b70f1-0afd-4f1e-9a82-cf0df4a74061",
+          "title": "Book Store Application",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "2578bb95-2c1f-4e08-8928-1bd1d746b258",
+              "title": "Book Store API",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Get a list of all books (Qase ID: 41)",
+                  "fullTitle": "Book Store Application Book Store API Get a list of all books (Qase ID: 41)",
+                  "timedOut": null,
+                  "duration": 740,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.api_getAllBooks().then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property('books');\n  expect(response.body.books).to.be.an('array');\n  expect(response.body.books.length).to.be.greaterThan(0);\n});",
+                  "err": {},
+                  "uuid": "a4c193b2-9656-4cfc-bf14-41e74c97d8c8",
+                  "parentUUID": "2578bb95-2c1f-4e08-8928-1bd1d746b258",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "a4c193b2-9656-4cfc-bf14-41e74c97d8c8"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 740,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "226b15cd-7958-4bea-b0b3-5e74eb054123",
+              "title": "Book Store API - Authentication",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Login with valid credentials (Qase ID: 43)",
+                  "fullTitle": "Book Store Application Book Store API - Authentication Login with valid credentials (Qase ID: 43)",
+                  "timedOut": null,
+                  "duration": 297,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.api_login().then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body.userId).to.exist;\n});",
+                  "err": {},
+                  "uuid": "c40ce604-f6d4-41e8-9a89-ff8912a32576",
+                  "parentUUID": "226b15cd-7958-4bea-b0b3-5e74eb054123",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Gets data from registered user (Qase ID: 44)",
+                  "fullTitle": "Book Store Application Book Store API - Authentication Gets data from registered user (Qase ID: 44)",
+                  "timedOut": null,
+                  "duration": 800,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.api_login();\ncy.api_getUser().then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property('userId', Cypress.env('user_id'));\n  expect(response.body).to.have.property('username', Cypress.env('user_name'));\n});",
+                  "err": {},
+                  "uuid": "22e686d6-85f7-41a9-81ee-4a4897f24a69",
+                  "parentUUID": "226b15cd-7958-4bea-b0b3-5e74eb054123",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "c40ce604-f6d4-41e8-9a89-ff8912a32576",
+                "22e686d6-85f7-41a9-81ee-4a4897f24a69"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1097,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "9738115d-527a-4276-b2db-8b0772ea5299",
+      "title": "",
+      "fullFile": "cypress/e2e/elements.cy.js",
+      "file": "cypress/e2e/elements.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c6b277f8-2948-4154-9cf1-d3a27727e1b1",
+          "title": "Elements",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "92e24721-8c85-4afd-a6e2-e0a216991fd5",
+              "title": "Text Box",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Submit Text Box form with valid data (Qase ID: 25)",
+                  "fullTitle": "Elements Text Box Submit Text Box form with valid data (Qase ID: 25)",
+                  "timedOut": null,
+                  "duration": 31663,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const data_user = {\n  firstName: 'Cecilia',\n  lastName: 'Sampaio',\n  email: 'ceciliasampaio.qa@gmail.com',\n  currentAddress: '123 Main Street',\n  permanentAddress: '456 Secondary Street'\n};\ncy.gui_fillFormElementsTextBox();\ncy.get('[id=\"output\"]').should('contain', `${data_user.firstName} ` + `${data_user.lastName}`).and('contain', `${data_user.email}`).and('contain', `${data_user.currentAddress}`).and('contain', `${data_user.permanentAddress}`);",
+                  "err": {},
+                  "uuid": "0d15620c-ebd5-4f99-b3f0-7b0d090bced7",
+                  "parentUUID": "92e24721-8c85-4afd-a6e2-e0a216991fd5",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "0d15620c-ebd5-4f99-b3f0-7b0d090bced7"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 31663,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "c6605515-86ac-46cf-9406-d81661b38e91",
+              "title": "Check Box",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Check multiple checkboxes in the \"Check Box\" page (Qase ID: 27)",
+                  "fullTitle": "Elements Check Box Check multiple checkboxes in the \"Check Box\" page (Qase ID: 27)",
+                  "timedOut": null,
+                  "duration": 10221,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const expectedWords = ['home', 'desktop', 'notes', 'commands', 'documents', 'workspace', 'react', 'angular', 'veu', 'office', 'public', 'private', 'classified', 'general', 'downloads', 'wordFile', 'excelFile'];\ncy.gui_checkingHomeCheckbox();\ncy.get('[id=\"result\"]').should('contain.text', 'You have selected :');\nexpectedWords.forEach(word => {\n  cy.get('[id=\"result\"]').should('contain.text', word);\n});",
+                  "err": {},
+                  "uuid": "d07e2916-95c6-4b5c-b46e-c94a294154d8",
+                  "parentUUID": "c6605515-86ac-46cf-9406-d81661b38e91",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "d07e2916-95c6-4b5c-b46e-c94a294154d8"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 10221,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "3ec4e443-943f-4884-834e-4de0f11c3572",
+              "title": "Radio Button",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Select \"Yes\" radio button (Qase ID: 37)",
+                  "fullTitle": "Elements Radio Button Select \"Yes\" radio button (Qase ID: 37)",
+                  "timedOut": null,
+                  "duration": 6856,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[id=\"yesRadio\"] + label').click();\ncy.contains('You have selected').should('be.visible');\ncy.get('p > span').should('contain', 'Yes').and('be.visible');",
+                  "err": {},
+                  "uuid": "008ee351-f9f9-44c7-945f-22d055024731",
+                  "parentUUID": "3ec4e443-943f-4884-834e-4de0f11c3572",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Select \"Impressive\" radio button (Qase ID: 26)",
+                  "fullTitle": "Elements Radio Button Select \"Impressive\" radio button (Qase ID: 26)",
+                  "timedOut": null,
+                  "duration": 8793,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[id=\"impressiveRadio\"] + label').click();\ncy.contains('You have selected').should('be.visible');\ncy.get('p > span').should('contain', 'Impressive').and('be.visible');",
+                  "err": {},
+                  "uuid": "c10d118c-cb6d-407b-a121-8cbebe87c9ce",
+                  "parentUUID": "3ec4e443-943f-4884-834e-4de0f11c3572",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "008ee351-f9f9-44c7-945f-22d055024731",
+                "c10d118c-cb6d-407b-a121-8cbebe87c9ce"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 15649,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "cf302b83-7ed9-47eb-b4ee-ea5a1e4e9d19",
+      "title": "",
+      "fullFile": "cypress/e2e/forms.cy.js",
+      "file": "cypress/e2e/forms.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "63de2f81-f37d-4205-af92-760866854b97",
+          "title": "Forms",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "636becd1-b915-4f5d-bd12-950e5f716124",
+              "title": "Practice Form",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Submit Practice Form without fill required fields (Qase ID: 38)",
+                  "fullTitle": "Forms Practice Form Submit Practice Form without fill required fields (Qase ID: 38)",
+                  "timedOut": null,
+                  "duration": 7954,
+                  "state": "passed",
+                  "speed": "medium",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const requiredFieldIds = ['firstName', 'lastName', 'userNumber'];\ncy.get('[id=\"submit\"]').click();\nrequiredFieldIds.forEach(field => {\n  cy.get(`[id=\"${field}\"]`).should('have.attr', 'required');\n});\ncy.get('[type=\"radio\"]').each(radio => {\n  cy.wrap(radio).should('have.attr', 'required');\n});",
+                  "err": {},
+                  "uuid": "4d02b836-1c2e-4820-9894-6badb1edf1b9",
+                  "parentUUID": "636becd1-b915-4f5d-bd12-950e5f716124",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Submit Practice Form with valid data (Qase ID: 35)",
+                  "fullTitle": "Forms Practice Form Submit Practice Form with valid data (Qase ID: 35)",
+                  "timedOut": null,
+                  "duration": 14510,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.gui_fillStudentRegistrationForm().then(data_user => {\n  cy.get('.modal-header').should('contain', 'Thanks for submitting the form');\n  cy.get('.modal-body').should('contain', data_user.firstName);\n  cy.get('.modal-body').should('contain', data_user.lastName);\n  cy.get('.modal-body').should('contain', data_user.email);\n  cy.get('.modal-body').should('contain', data_user.phone);\n  cy.get('.modal-body').should('contain', data_user.birthDate);\n  cy.get('.modal-body').should('contain', data_user.subjects);\n  cy.get('.modal-body').should('contain', data_user.hobbies);\n  cy.get('.modal-body').should('contain', data_user.picture);\n  cy.get('.modal-body').should('contain', data_user.address);\n  cy.get('.modal-body').should('contain', data_user.state);\n  cy.get('.modal-body').should('contain', data_user.city);\n});",
+                  "err": {},
+                  "uuid": "9534dca3-f7d3-4692-97df-221e62f0ef4e",
+                  "parentUUID": "636becd1-b915-4f5d-bd12-950e5f716124",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "4d02b836-1c2e-4820-9894-6badb1edf1b9",
+                "9534dca3-f7d3-4692-97df-221e62f0ef4e"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 22464,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "187c480a-b6ca-4a51-b7f1-cd979350b9d6",
+      "title": "",
+      "fullFile": "cypress/e2e/widgets.cy.js",
+      "file": "cypress/e2e/widgets.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "88879b81-e720-473a-99a2-997fe09f5db6",
+          "title": "Widgets",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "cf8366be-30f0-475d-a31b-505e57689c44",
+              "title": "Progress Bar",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Check Progress Bar progress, completion and reset (Qase ID: 40)",
+                  "fullTitle": "Widgets Progress Bar Check Progress Bar progress, completion and reset (Qase ID: 40)",
+                  "timedOut": null,
+                  "duration": 21130,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visit('/progress-bar');\ncy.clock();\ncy.get('[id=\"startStopButton\"]').click();\ncy.tick(10000);\ncy.get('[id=\"progressBar\"] [role=\"progressbar\"]').should('have.attr', 'aria-valuenow', '100');\ncy.get('[id=\"resetButton\"]').click();\ncy.get('[id=\"progressBar\"] [role=\"progressbar\"]').should('have.attr', 'aria-valuenow', '0');",
+                  "err": {},
+                  "uuid": "04f45852-3d55-4c41-add9-d304cdf4efd2",
+                  "parentUUID": "cf8366be-30f0-475d-a31b-505e57689c44",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "04f45852-3d55-4c41-add9-d304cdf4efd2"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 21130,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports/html/.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportFilename": "[name]-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

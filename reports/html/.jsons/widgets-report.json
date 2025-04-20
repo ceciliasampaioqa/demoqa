@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-04-20T18:24:56.254Z",
+    "end": "2025-04-20T18:25:18.100Z",
+    "duration": 21846,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "187c480a-b6ca-4a51-b7f1-cd979350b9d6",
+      "title": "",
+      "fullFile": "cypress/e2e/widgets.cy.js",
+      "file": "cypress/e2e/widgets.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "88879b81-e720-473a-99a2-997fe09f5db6",
+          "title": "Widgets",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "cf8366be-30f0-475d-a31b-505e57689c44",
+              "title": "Progress Bar",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Check Progress Bar progress, completion and reset (Qase ID: 40)",
+                  "fullTitle": "Widgets Progress Bar Check Progress Bar progress, completion and reset (Qase ID: 40)",
+                  "timedOut": null,
+                  "duration": 21130,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.visit('/progress-bar');\ncy.clock();\ncy.get('[id=\"startStopButton\"]').click();\ncy.tick(10000);\ncy.get('[id=\"progressBar\"] [role=\"progressbar\"]').should('have.attr', 'aria-valuenow', '100');\ncy.get('[id=\"resetButton\"]').click();\ncy.get('[id=\"progressBar\"] [role=\"progressbar\"]').should('have.attr', 'aria-valuenow', '0');",
+                  "err": {},
+                  "uuid": "04f45852-3d55-4c41-add9-d304cdf4efd2",
+                  "parentUUID": "cf8366be-30f0-475d-a31b-505e57689c44",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "04f45852-3d55-4c41-add9-d304cdf4efd2"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 21130,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports/html/.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportFilename": "[name]-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
