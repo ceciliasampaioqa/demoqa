@@ -2,7 +2,7 @@
 
 [![Cypress](https://img.shields.io/badge/tested%20with-Cypress-3e873c.svg)](https://www.cypress.io/)
 [![Node.js](https://img.shields.io/badge/Node.js-22.13.0-brightgreen)](https://nodejs.org/)
-[![CI](https://github.com/ceciliasampaioqa/demoqa-cypress-tests/actions/workflows/ci.yml/badge.svg)](https://github.com/ceciliasampaioqa/demoqa-cypress-tests/actions)
+[![CI](https://github.com/ceciliasampaioqa/demoqa/actions/workflows/ci.yml/badge.svg)](https://github.com/ceciliasampaioqa/demoqa/actions)
 
 Automated end-to-end and API test suite for the [DemoQA](https://demoqa.com/) web application using [Cypress](https://www.cypress.io/).
 

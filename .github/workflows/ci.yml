@@ -56,7 +56,13 @@ jobs:
           mkdir -p reports/merged
           npm install -g mochawesome-merge mochawesome-report-generator
 
-          mochawesome-merge reports/html/*.json > reports/merged/mochawesome.json
+          echo "📁 Conteúdo da pasta reports/html/.jsons/"
+            ls -l reports/html/.jsons/
+
+          echo "📁 Conteúdo da pasta completa reports/"
+            find reports/ -type f
+
+          mochawesome-merge reports/html/.jsons/*.json > reports/merged/mochawesome.json
           marge reports/merged/mochawesome.json --reportDir reports/merged --reportFilename final-report.html
 
       - name: Upload HTML Report
