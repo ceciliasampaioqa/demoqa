@@ -1,70 +1,72 @@
-name: Tests
+name: Cypress Tests
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  cypress-run:
+  run-tests:
+    name: Run Cypress in Parallel
     runs-on: ubuntu-22.04
-
     strategy:
       fail-fast: false
       matrix:
-        container: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
+        container: [1, 2, 3, 4, 5]
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Set up Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22.14.0
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Run Cypress tests in parallel
-        uses: cypress-io/github-action@v6
-        with:
-          start: npm run cypress:headless
-          wait-on: "http://localhost:3000" # se necessário
-        env:
-          SPLIT: ${{ strategy.job-total }}
-          SPLIT_INDEX: ${{ strategy.job-index }}
+      - name: Run Cypress test with split
+        run: |
+          SPLIT=5 SPLIT_INDEX=$(( ${{ matrix.container }} - 1 )) npx cypress run
 
-      - name: Upload JSON report
+      - name: Upload JSON report artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: cypress-report-${{ matrix.container }}
+          name: cypress-json-${{ matrix.container }}
           path: reports/html/.jsons/
+          if-no-files-found: warn
 
-  report:
+  merge-report:
+    name: Merge and Generate Report
     runs-on: ubuntu-22.04
-    needs: cypress-run
+    needs: run-tests
 
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Download all reports
+      - name: Download JSON artifacts
         uses: actions/download-artifact@v4
         with:
-          path: ./reports/html/.jsons/
+          path: downloads
 
-      - name: Merge and generate final report
-        run: npm run post-test
+      - name: Merge mochawesome JSONs and generate HTML report
+        run: |
+          mkdir -p reports/merged
+          npm install -g mochawesome-merge mochawesome-report-generator
 
-      - name: Upload final HTML report
+          # Mover todos os .json para a pasta correta
+          find downloads -type f -name '*.json' -exec cp {} reports/html/.jsons/ \;
+
+          mochawesome-merge reports/html/.jsons/*.json > reports/merged/mochawesome.json
+          marge reports/merged/mochawesome.json --reportDir reports/merged --reportFilename final-report.html
+
+      - name: Upload HTML Report
         uses: actions/upload-artifact@v4
         with:
-          name: Final-HTML-Report
-          path: reports/html/
+          name: final-html-report
+          path: |
+            reports/merged/final-report.html
+            reports/merged/assets/
+            reports/merged/mochawesome.json
