@@ -1,0 +1,141 @@
+# 🧪 Demo QA Cypress Automated Test Suite
+
+[![Cypress](https://img.shields.io/badge/tested%20with-Cypress-3e873c.svg)](https://www.cypress.io/)
+[![Node.js](https://img.shields.io/badge/Node.js-22.13.0-brightgreen)](https://nodejs.org/)
+[![CI](https://github.com/ceciliasampaioqa/demoqa-cypress-tests/actions/workflows/ci.yml/badge.svg)](https://github.com/ceciliasampaioqa/demoqa-cypress-tests/actions)
+
+Automated end-to-end and API test suite for the [DemoQA](https://demoqa.com/) web application using [Cypress](https://www.cypress.io/).
+
+This project simulates real user behavior and validates core functionalities of the DemoQA platform through robust UI and API test cases. All test cases are documented and managed in [Qase.io](https://app.qase.io/projects), which is integrated with the automated test suite.
+
+---
+
+## 📋 Pre-requirements
+
+Ensure the following are installed:
+
+- Git `2.38.1` or later
+- Node.js `v22.13.0` or later
+- npm `11.2.0` or later
+
+To check the versions:
+
+```bash
+git --version
+node -v
+npm -v
+```
+
+## 📦 Installation
+
+Clone the repository and install the dependencies:
+
+```bash
+git clone https://github.com/ceciliasampaioqa/demoqa-cypress-tests.git
+cd demoqa-cypress-tests
+npm install
+```
+
+## 🚀 Running the Tests
+
+Local Execution
+
+- Headless: npm run cypress:headless
+
+- Interactive (Cypress GUI): npm run cypress:open
+
+Qase Integration
+To execute tests and send results to Qase:
+
+```bash
+npm run test:qase
+```
+
+Test reports can then be viewed in the "Test Runs" section of Qase.
+
+## 📚 Test Coverage
+
+Test scenarios are grouped by feature and follow a structured naming convention:
+
+```bash
+cypress/e2e/alerts_frame_windows.cy.js
+└─ Alerts, Frames & Windows
+  ├─ Browser Windows: new tab/window
+  └─ Alerts: immediate, delayed, confirm, prompt
+
+cypress/e2e/book_store_application.cy.js
+└─ Book Store Application
+  ├─ API: List books, User login, Get user data
+
+cypress/e2e/elements.cy.js
+└─ Elements
+  ├─ Text Box: form submission
+  ├─ Check Box: multi-selection
+  └─ Radio Button: option selection
+
+cypress/e2e/forms.cy.js
+└─ Forms
+  └─ Practice Form: validation (empty and filled)
+
+cypress/e2e/widgets.cy.js
+└─ Widgets
+  └─ Progress Bar: fill, completion, and reset
+```
+
+## 🧪 Qase Test Management
+
+All test cases are available and maintained in Qase, including detailed steps, types, and expected results.
+
+🔗 Access Qase Project: https://app.qase.io/projects
+
+Email: ceciliasampaio.demoqa@gmail.com
+
+Password: Teste@123
+
+Navigate to the "Demo QA" project.
+
+### Explore:
+
+```
+Repository: Written test cases
+
+Test Runs: Results and history of automated/manual test executions
+
+Defects: Bugs reported during the process
+```
+
+Qase is also integrated with the automated suite, enabling direct result publishing from Cypress executions.
+
+## 🛠️ Technologies Used
+
+<a href="https://go-skill-icons.vercel.app/"> <img src="https://go-skill-icons.vercel.app/api/icons?i=cypress,javascript,nodejs,git,postman,html,css" /> </a>
+
+```
+Cypress for E2E and API testing
+JavaScript
+GitHub Actions for CI/CD
+Qase for test case management and reporting
+```
+
+## ✅ Best Practices & Architecture
+
+```
+Custom Commands used for scalability and reusability
+
+Automated + Manual test case traceability through Qase
+
+Organized test structure by feature
+
+CI with GitHub Actions
+
+Easily expandable with new features/tests
+
+Sensitive files like cypress.env.json are excluded from version control (sent only for this exercise)
+```
+
+## 🙋‍♀️ About the Author
+
+Created with 💜 by Cecília Sampaio
+
+Feel free to connect and ⭐ the repo if you found it helpful!
+GitHub: ceciliasampaioqa

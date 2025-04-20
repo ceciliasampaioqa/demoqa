@@ -1,0 +1,70 @@
+name: Tests
+
+on: push
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
+
+    strategy:
+      fail-fast: false
+      matrix:
+        container: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Cypress tests in parallel
+        uses: cypress-io/github-action@v6
+        with:
+          start: npm run cypress:headless
+          wait-on: "http://localhost:3000" # se necessário
+        env:
+          SPLIT: ${{ strategy.job-total }}
+          SPLIT_INDEX: ${{ strategy.job-index }}
+
+      - name: Upload JSON report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-report-${{ matrix.container }}
+          path: reports/html/.jsons/
+
+  report:
+    runs-on: ubuntu-22.04
+    needs: cypress-run
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download all reports
+        uses: actions/download-artifact@v4
+        with:
+          path: ./reports/html/.jsons/
+
+      - name: Merge and generate final report
+        run: npm run post-test
+
+      - name: Upload final HTML report
+        uses: actions/upload-artifact@v4
+        with:
+          name: Final-HTML-Report
+          path: reports/html/
