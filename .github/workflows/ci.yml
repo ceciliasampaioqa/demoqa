@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Cypress test with split
         run: |
-          SPLIT=5 SPLIT_INDEX=$(( ${{ matrix.container }} - 1 )) npx cypress run --browser chrome --silent
+          SPLIT=5 SPLIT_INDEX=$(( ${{ matrix.container }} - 1 )) npx cypress run 2> /dev/null
 
       - name: Upload JSON report artifacts
         if: always()
