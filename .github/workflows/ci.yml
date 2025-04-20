@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Cypress test with split
         run: |
-          SPLIT=5 SPLIT_INDEX=$(( ${{ matrix.container }} - 1 )) npx cypress run
+          SPLIT=5 SPLIT_INDEX=$(( ${{ matrix.container }} - 1 )) npx cypress run --browser chrome --silent
 
       - name: Upload JSON report artifacts
         if: always()
@@ -56,10 +56,7 @@ jobs:
           mkdir -p reports/merged
           npm install -g mochawesome-merge mochawesome-report-generator
 
-          # Mover todos os .json para a pasta correta
-          find downloads -type f -name '*.json' -exec cp {} reports/html/.jsons/ \;
-
-          mochawesome-merge reports/html/.jsons/*.json > reports/merged/mochawesome.json
+          mochawesome-merge reports/html/*.json > reports/merged/mochawesome.json
           marge reports/merged/mochawesome.json --reportDir reports/merged --reportFilename final-report.html
 
       - name: Upload HTML Report
