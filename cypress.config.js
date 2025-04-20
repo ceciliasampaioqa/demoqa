@@ -4,7 +4,7 @@ const cypressSplit = require('cypress-split')
 module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
-    reportDir: 'reports/html/.jsons/',
+    reportDir: 'reports/html/',
     overwrite: true,
     html: true,
     json: true,
