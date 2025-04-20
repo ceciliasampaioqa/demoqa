@@ -1,10 +1,10 @@
-const { defineConfig } = require("cypress")
+const { defineConfig } = require('cypress')
 const cypressSplit = require('cypress-split')
 
 module.exports = defineConfig({
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
-    reportDir: 'reports/html/',
+    reportDir: 'reports/html/.jsons/',
     overwrite: true,
     html: true,
     json: true,
@@ -23,6 +23,6 @@ module.exports = defineConfig({
       cypressSplit(on, config)
 
       return config
-    },
-  },
+    }
+  }
 })
