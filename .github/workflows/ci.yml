@@ -29,14 +29,6 @@ jobs:
         run: |
           SPLIT=5 SPLIT_INDEX=$(( ${{ matrix.container }} - 1 )) npx cypress run 2> /dev/null
 
-      # - name: Upload JSON report artifacts
-      #   if: always()
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: cypress-json-${{ matrix.container }}
-      #     path: reports/html/.jsons/
-      #     if-no-files-found: warn
-
   merge-report:
     name: Merge and Generate Report
     runs-on: ubuntu-22.04
@@ -45,11 +37,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-
-      # - name: Download JSON artifacts
-      #   uses: actions/download-artifact@v4
-      #   with:
-      #     path: downloads
 
       - name: Merge mochawesome JSONs and generate HTML report
         run: |
